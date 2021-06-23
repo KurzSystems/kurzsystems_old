@@ -1,1 +1,1 @@
-web: gunicorn kurzsystems.wsgi 
+web: gunicorn core.wsgi 
