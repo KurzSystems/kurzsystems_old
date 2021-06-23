@@ -1,7 +1,7 @@
 from django.db import models
 
 from wagtail.core.models import Page
-
+from cloudinary.models import CloudinaryField
 
 class HomePage(Page):
     pass
@@ -12,3 +12,10 @@ class NotifyEmail(models.Model):
 
     def __str__(self):
         return self.email
+    
+# temporarily store coming soon video while implementing cloudinary
+class Video(models.Model):
+  video = CloudinaryField('video', resource_type='video', null=True)
+  
+
+

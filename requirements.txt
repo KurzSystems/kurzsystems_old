@@ -3,6 +3,7 @@ asgiref==3.3.4
 beautifulsoup4==4.9.3
 certifi==2021.5.30
 chardet==4.0.0
+cloudinary==1.26.0
 crispy-bootstrap5==0.4
 dj-database-url==0.5.0
 dj-static==0.0.6
@@ -34,7 +35,6 @@ telepath==0.2
 urllib3==1.26.5
 wagtail==2.13.1
 webencodings==0.5.1
-whitenoise==5.2.0
 Willow==1.4
 xlrd==2.0.1
 XlsxWriter==1.4.3

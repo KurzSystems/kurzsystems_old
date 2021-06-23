@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 
-from .models import NotifyEmail
+from .models import NotifyEmail,Video
 from .forms import NotifyEmailForm
 
 
@@ -21,6 +21,10 @@ def coming_soon(request):
             messages.success(request,
                              'Your email has been saved, we will get back to you.',
                              "alert alert-success alert-dismissible fade show")
+        
+    
+    videos = Video.objects.all()
+    context = { 'form':form, 'videos': videos }
 
-    return render(request, 'home/coming_soon.html', {'form': form})
+    return render(request, 'home/coming_soon.html', context)
 

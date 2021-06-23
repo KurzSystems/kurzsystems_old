@@ -11,11 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -28,6 +30,7 @@ INSTALLED_APPS = [
     'search',
     'crispy_forms',
     'crispy_bootstrap5',
+    'cloudinary',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -60,8 +63,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
@@ -172,3 +173,11 @@ BASE_URL = 'http://example.com'
 
 # AUTOFIELDS
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# CLOUDINARY
+cloudinary.config( 
+  cloud_name = "dnxu9us5t", 
+  api_key = "545695252616441", 
+  api_secret = "WA8UYVPY8sOWV2Qf6WqR7xt7jDM"
+  #secure = true
+)

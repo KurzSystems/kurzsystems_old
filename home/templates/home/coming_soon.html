@@ -20,8 +20,11 @@
     </head>
     <body>
         <!-- Background Video-->
-        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{% static 'assets/mp4/bg.mp4' %}" type="video/mp4" /></video>
-        <!-- Masthead-->
+        <!--<video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{% static 'assets/mp4/bg.mp4' %}" type="video/mp4" /></video>-->
+        {% for video in videos %}
+        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{{ video.video.url }}" type="video/mp4" /></video>
+        {% endfor %}
+        <!-- Masthead--> <!-- dont-->
         <div class="masthead">
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
